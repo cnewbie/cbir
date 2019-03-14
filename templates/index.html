@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}
+  <title>{{ escape(handler.settings["sitename"]) }}</title>
+{% end %}
+{% block css %}
+  <!-- Custom styles for this template -->
+  <link href="{{ static_url("css/small.css")}}" rel="stylesheet">
+{% end %}
+
+{% block header %}
+  <header>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/">{{ escape(handler.settings["sitename"]) }}</a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+{% end %}
+
+{% block main %}
+<main role="main" id="main">
+  <!-- Page Content -->
+  <div class="container">
+    <!-- Heading Row -->
+    <div class="row my-3">
+      <div class="col-md-4 offset-md-4">
+        <form id="search-form" method="post" enctype="multipart/form-data">
+        <!-- <form id="search-form"> -->
+          <div class="form-group">
+            <label class="custom-file col">
+              <input  class="custom-file-input" type="file" id="upload-file" name="imgpath" accept="image/*">
+              <span class="custom-file-control" id="upload-file-name"></span>
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="col-form-label" for="feature-name">Select Feature</label>
+            <select class="custom-select col"  id="feature-name" name="feature-selected">
+              <option value="sift_vlad">SIFT VLAD</option>
+              <option value="surf_vlad">SURF VLAD</option>
+            </select>
+          </div>
+          <!-- <button type="reset" class="btn btn-primary" id="upload-button">Reset</button> -->
+          <button type="button" class="btn btn-primary float-right" id="upload-button">Search Now</button>
+        </form>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 d-none" id="image-pre-div">
+        <div class="card">
+          <img id="image-preview" class="card-img-top" style="height: 300px" src="" alt="Card image Preview">
+          <div class="card-footer text-center">
+            Preview
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Call to Action Well -->
+    <div class="card text-white bg-secondary my-3 text-center d-none" id="result-div-line">
+      <div class="card-text">
+        <p class="text-white m-0">Result show below</p>
+      </div>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row d-none" id="results-row">
+      <!-- <div class="col-md-4 mb-4">
+        <div class="card h-10">
+          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+          <div class="card-footer">
+            <p class="card-text">Score</p>
+          </div>
+        </div>
+      </div> -->
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</main>
+{% end %}
+
+{% block footer %}
+<!-- Footer -->
+<footer class="py-3 bg-dark footer">
+  <div class="container">
+    <p class="mt-3 text-center text-white">Copyright &copy; Search Website 2017</p>
+  </div>
+  <!-- /.container -->
+</footer>
+{% end %}
+
+{% block scripts %}
+  <script src="{{ static_url("js/filestyle.min.js")}}"></script>
+  <script src="{{ static_url("js/customs.js")}}"></script>
+{% end %}

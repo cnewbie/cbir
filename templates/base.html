@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="image search website">
+    <meta name="author" content="cbir">
+
+    {% block title %}{% end %}
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ static_url("bootstrap/css/bootstrap.min.css")}}" rel="stylesheet" crossorigin="anonymous">
+
+    {% block css %}{% end %}
+  </head>
+  <body>
+    {% block header %}{% end %}
+    {% block main %}{% end %}
+    {% block footer %}{% end %}
+    <!-- Bootstrap and Jquery core JavaScript -->
+    <script src="{{ static_url("jquery/jquery.min.js")}}" crossorigin="anonymous"></script>
+    <script src="{{ static_url("bootstrap/js/bootstrap.bundle.min.js")}}" crossorigin="anonymous"></script>
+    {%block scripts %}{% end %}
+  </body>
+
+</html>

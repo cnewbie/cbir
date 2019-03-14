@@ -1,0 +1,11 @@
+{%for k,v in lists%}
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <img class="card-img-top" style="height: 300px" src="{{ static_url(k) }}" alt="{{k}}">
+      <div class="card-footer">
+        <p class="card-text">Score: {{v}}</p>
+      </div>
+    </div>
+  </div>
+  <!-- /.col-md-4 -->
+{% end %}
